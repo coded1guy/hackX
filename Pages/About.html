@@ -17,7 +17,10 @@
           /></a>
         </div>
         <div class="navbar_sep">
-          <div class="navbar_reg1">
+          <div
+            class="navbar_reg1"
+            onclick="window.location.assign('register.html')"
+          >
             <a class="navbar_reg4" href="Register.html">REGISTER</a>
           </div>
           <div class="navbar_ham">
@@ -27,20 +30,25 @@
       </section>
 
       <section class="navbar_second">
-        <div class="navbar_about"><a href="/index.html">Home</a></div>
-        <div class="navbar_about"><a href="Pages/About.html">About</a></div>
+        <div class="navbar_about"><a href="../index.html">Home</a></div>
+        <div class="navbar_about"><a href="About.html">About</a></div>
 
-        <div class="navbar_ment">
+        <!--<div class="navbar_ment">
           <a href="/index.html#mentors">Mentors</a>
+        </div>-->
+        <div class="navbar_sch">
+          <a href="../index.html#schedule">Schedule</a>
         </div>
         <div class="navbar_sch">
-          <a href="/index.html#schedule">Schedule</a>
+          <a href="../index.html#contact">Contact</a>
         </div>
-        <div class="navbar_sch"><a href="/index.html #contact">Contact</a></div>
-        <div class="navbar_reg2">
+        <div
+          class="navbar_reg2"
+          onclick="window.location.assign('register.html')"
+        >
           <a class="navbar_reg3" href="Register.html">REGISTER</a>
         </div>
-        <div class="navbar_log">
+        <div class="navbar_log" onclick="window.location.assign('Login.html')">
           <a class="navbar_log2" href="Login.html">LOGIN</a>
         </div>
       </section>
@@ -48,41 +56,42 @@
 
     <section class="image_one">
       <img
-        src="../assets/images/about.png"
+        src="../assets/images/Totel_Photography-7584.jpg"
         alt="About"
-        height="200px"
+        height="auto"
         width="100%"
+        style="margin: 0 0 4% 0"
       />
     </section>
     <section class="text_one">
-      <h2 class="text_one__head">What Is HackX?</h2>
+      <h2 class="text_one__head" style="text-transform: uppercase;">What Is hackX?</h2>
       <p>
-        The first edition of ECX Hackathon themed HackX "Building Solutions For
+        The first edition of ECX hackathon themed hackX "Building Solutions For
         The Future" focuses on building innovative solutions to the following
         sectors: Health, Real Estate, Logistics, Education. The competition
-        enables programmers to share skills in teams solving a real Engineering
+        enables programmers to share skills in teams solving a real engineering
         challenge.
       </p>
     </section>
-    <section class="image_two">
-      <h2 class="image_two__head">Who Is Eligible?</h2>
+    <section class="image_two" id="eligible-check-section">
+      <h2 class="image_two__head" style="margin: 4% 0; text-transform: uppercase;">Who Is Eligible?</h2>
     </section>
     <section class="text_two">
       <div class="text_two__first">
-        The challenge is open to Nigerian undergraduates in selected colleges.
+        The challenge is open to Nigerian undergraduates in selected universities and
+        colleges.
         There would be round(s) of shortlisting after the open application and
         review of qualification by special panelists.
       </div>
       <div class="text_two__second">
         <div class="text_two__paragraph">
-          <span class="text_two__icon">&#9679;</span><br /><span
-            class="text_two__txt"
-            >Must be a student of any of the underlisted universities or
-            colleges</span
-          >
+          <span class="text_two__icon">&#9679;</span>
+          <span class="text_two__txt" style="font-family: Poppins; font-size: 18px;">
+            Participants must be a student of any of the underlisted universities or colleges:
+          </span>
         </div>
         <ul class="text_two__list">
-          <li>&#8212; YABATECH</li>
+          <li>&#8212; YABA COLLEGE OF TECHNOLOGY</li>
           <li id="text_two__two">&#8212; UNIVERSITY OF IBADAN</li>
           <li id="text_two__three">&#8212; OBAFEMI AWOLOWO UNIVERSITY</li>
           <li id="text_two__four">&#8212; UNIVERSITY OF LAGOS</li>
@@ -91,61 +100,76 @@
           <li id="text_two__seven">&#8212; BABCOCK/BELLS UNIVERSITY</li>
           <li id="text_two__eight">&#8212; IBADAN POLYTECHNIC</li>
           <li id="text_two__nine" class="text_two__wrap">
-            &#8212;<span class="text_two__txtwrap"
-              >FEDERAL UNIVERSITY OF TECHNOLOGY, AKURE</span
-            >
+            &#8212;
+            <span class="text_two__txtwrap">FEDERAL UNIVERSITY OF TECHNOLOGY, AKURE</span>
           </li>
           <li id="text_two__ten" class="text_two__wrap">
-            &#8212;<span class="text_two__txtwrap"
-              >FEDERAL UNIVERSITY OF AGRICULTURE, ABEOKUTA</span
-            >
+            &#8212;
+            <span class="text_two__txtwrap">FEDERAL UNIVERSITY OF AGRICULTURE, ABEOKUTA</span>
           </li>
           <li id="text_two__eleven">&#8212; KWARA STATE UNIVERSITY</li>
           <li id="text_two__twelve">&#8212; LAGOS STATE UNIVERSITY</li>
           <li id="text_two__thirteen" class="text_two__wrap">
-            &#8212;<span class="text_two__txtwrap"
-              >ADEKUNLE AJASIN UNIVERSITY, AKUNGBA</span
-            >
+            &#8212;
+            <span class="text_two__txtwrap">ADEKUNLE AJASIN UNIVERSITY, AKUNGBA</span>
           </li>
         </ul>
         <div class="text_two__paragraph">
-          <span class="text_two__icon">&#9679;</span><br /><span
-            class="text_two__txt"
-            >Must be willing to be available during the period of the
-            Hackathon</span
-          >
+          <span class="text_two__icon">&#9679;</span>
+          <span class="text_two__txt" style="font-family: Poppins; font-size: 18px;">
+            Participants must  have constant access to the internet, and a good laptop, during the period of the hackathon
+          </span>
         </div>
       </div>
       <br /><br />
     </section>
-    <h1 class="criteria-section-h1">CRITERIA FOR SELECTION</h1>
+    <h1 class="criteria-section-h1" id="criteria-for-selectionn" style="color: #ffffff;">
+      CRITERIA FOR SELECTION
+    </h1>
     <div class="criteria-section">
       <div class="uls">
         <div class="ul1">
           <ul>
-            <li>
-              Selection would be aimed at giving equal gender oppurtunities
-            </li>
-            <li>
-              Participants must have active WhatsApp contact,&nbsp;email
-              address, Github account for ease of communication
-            </li>
-            <li>Each team would have a range of 4 - 5 individuals.</li>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li>
+                Selection would be aimed at giving equal gender opportunities.
+              </li>
+            </span>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li>
+                Participants must be active on Slack, for ease of communication.
+              </li>
+            </span>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li>Each team would be made up of 4 individuals</li>
+            </span>
           </ul>
         </div>
         <div class="ul2">
           <ul>
-            <li>
-              The Hackathon is only opened to undergraduates of qualified
-              colleges as stated
-            </li>
-            <li>
-              The admin would select based on the merit discretion of qualified
-              candidates
-            </li>
-            <li class="li">
-              A college can have more thsn one person for representation
-            </li>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li>
+                The hackathon is only opened to undergraduates of qualified
+                colleges as stated.
+              </li>
+            </span>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li>
+                The admin would select based on the merit discretion of qualified
+                candidates.
+              </li>
+            </span>
+            <span class="limc">
+              <img class="marker" src="../assets/images/right-arrow.svg">
+              <li class="li">
+                There are no limits to the number of students from any university or college
+              </li>
+            </span>
           </ul>
         </div>
       </div>
@@ -154,101 +178,137 @@
           <div class="cri-content content-cnt">
             <div class="cri-image">
               <img
-                src="../assets/images/eligibility.png"
+                src="../assets/images/search.svg"
                 class="scheme-image"
+                width="80px" height="auto" title="Designed by Freepik"
+                alt="check for eligibility illustration"
               />
             </div>
-            <span class="text">
-              Check for Eligibility
-            </span>
+            <span class="text"> Check for Eligibility </span>
           </div>
           <div class="cri-content content-arrow">
-            <img src="../assets/images/blue-arrow.png" class="arrow-flow" />
+            <img src="../assets/images/blue-arrow.png" class="arrow-flow" alt="arrow image" />
           </div>
           <div class="cri-content content-cnt">
             <div class="cri-image">
-              <img src="../assets/images/register.png" class="scheme-image" />
+              <img src="../assets/images/register.png" class="scheme-image" alt="register for the hackathon illustration"/>
             </div>
-            <span class="text">
-              Register for the Hackathon
-            </span>
+            <span class="text"> Register for the Hackathon </span>
           </div>
           <div class="cri-content content-arrow">
-            <img src="../assets/images/yellow-arrow.png" class="arrow-flow" />
-          </div>
-          <div class="cri-content content-cnt">
-            <div class="cri-image">
-              <img
-                src="../assets/images/complete-task.png"
-                class="scheme-image"
-              />
-            </div>
-            <span class="text">
-              Complete Task
-            </span>
-          </div>
-          <div class="cri-content content-arrow">
-            <img src="../assets/images/red-arrow.png" class="arrow-flow" />
+            <img src="../assets/images/yellow-arrow.png" class="arrow-flow" alt="arrow image" />
           </div>
           <div class="cri-content content-cnt">
             <div class="cri-image">
               <img
-                src="../assets/images/wait-for-result.png"
+                src="../assets/images/submit-appli.svg"
                 class="scheme-image"
+                width="80px" height="auto"
+                alt="complete task illustration"
               />
             </div>
-            <span class="text">
-              Wait for results
-            </span>
+            <span class="text"> Submit Project </span>
+          </div>
+          <div class="cri-content content-arrow">
+            <img src="../assets/images/red-arrow.png" class="arrow-flow" alt="arrow image" />
+          </div>
+          <div class="cri-content content-cnt">
+            <div class="cri-image">
+              <img
+                src="../assets/images/loading.svg"
+                class="scheme-image"
+                width="80px" height="auto"
+                style="transform: rotateY(180deg)" title="Designed by Freepik"
+                alt="check for eligibility illustration"
+              />
+            </div>
+            <span class="text"> Wait for Results </span>
           </div>
         </div>
         <div class="buttons">
           <button class="btn1">
-            <a style="color: white;" href="/Pages/Register.html">Apply Now</a>
+            <a style="color: white" href="Register.html">Apply Now</a>
           </button>
           <button class="btn2">
-            <a style="color: white;" href="/index.html">Home</a>
+            <a style="color: white" href="../index.html">Home</a>
           </button>
         </div>
       </div>
     </div>
-    <footer class="footer">
+    <footer class="footer" id="footer-mobile">
+      <div class="footer-top">
+        <!-- for mobile view -->
+        <div class="buttons">
+          <a href="../Pages/register.html"><button class="register">Register</button></a>
+          <br />
+          <a href="../Pages/Login.html"><button class="login">Login</button></a>
+        </div>
+        <p class="footer-links">
+          <a href="../Pages/about.html#eligible-check-section">Qualification Requirements</a>
+          <!--<a href="#mentors">Mentors & Speakers</a>-->
+          <a href="../Pages/about.html">Terms and Conditions</a>
+          <a href="mailto:ecxunilag@gmail.com?subject=Dear%20ECX%20,%20my%20name%20is" target="_blank">Support</a>
+        </p>
+        <div class="ecxx">
+          <img src="../assets/ECX.svg" alt="ecx" class="ecx-image-mobile-display" />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-icons">
+          <!-- icons go here -->
+          <a href="https://www.instagram.com/ecxunilag" target="_blank">
+            <div class="instagram" title="instagram" alt="instagram"></div>
+          </a>
+          <a href="https://twitter.com/ecxunilag?lang=en" target="_blank">
+            <img src="../assets/images/twitter.svg" class="twitter" title="twitter" alt="twitter"/>
+          </a>
+          <a href="mailto:ecxunilag@gmail.com?subject=Dear%20ECX%20,%20my%20name%20is" target="_blank">
+            <div class="email" title="email" alt="email"></div>
+          </a>
+        </div>
+        <div class="footer-copyright">
+          <p><span style="font-size: 16px;">&copy; ECX 2020</span></p>
+          <p style="font-size: 16px;">Made with &lt; /&gt;</p>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer" id="footer-desktop">
       <div class="footer-top">
         <div class="ecxx">
-          <img src="../assets/ECX.svg" alt="ecx" class="ecx-image" />
+          <img src="../assets/ECX.svg" alt="ecx" class="ecx-image-desktop-display" />
         </div>
         <!-- for mobile view -->
         <div class="buttons">
-          <a href="Register.html"><button class="register">Register</button></a>
+          <a href="../Pages/register.html"><button class="register">Register</button></a>
           <br />
-          <a href="Login.html"><button class="login">Login</button></a>
+          <a href="../Pages/Login.html"><button class="login">Login</button></a>
         </div>
         <p class="footer-links">
-          <a href="#">Qualification Requirement</a>
-          <a href="#">Mentors & Speakers</a>
-          <a href="#">Terms and Condition</a>
-          <a href="#">Support</a>
+          <a href="../Pages/about.html#eligible-check-section">Qualification Requirements</a>
+          <!--<a href="#mentors">Mentors & Speakers</a>-->
+          <a href="../Pages/about.html">Terms and Conditions</a>
+          <a href="mailto:ecxunilag@gmail.com?subject=Dear%20ECX%20,%20my%20name%20is" target="_blank">Support</a>
         </p>
       </div>
       <div class="footer-bottom">
         <div class="footer-icons">
           <!-- icons go here -->
-          <a href="#"
-            ><img src="../assets/images/facebook.svg" alt="facebook"
-          /></a>
-          <a href="#"
-            ><img src="../assets/images/twitter.svg" alt="twitter"
-          /></a>
-          <a href="#"><img src="../assets/images/slack.svg" alt="slack" /></a>
-          <a href="#"><img src="../assets/images/github.svg" alt="github" /></a>
+          <a href="https://www.instagram.com/ecxunilag" target="_blank">
+            <div class="instagram" title="instagram" alt="instagram"></div>
+          </a>
+          <a href="https://twitter.com/ecxunilag?lang=en" target="_blank">
+            <img src="../assets/images/twitter.svg" class="twitter" title="twitter" alt="twitter"/>
+          </a>
+          <a href="mailto:ecxunilag@gmail.com?subject=Dear%20ECX%20,%20my%20name%20is" target="_blank">
+            <div class="email" title="email" alt="email"></div>
+          </a>
         </div>
         <div class="footer-copyright">
-          <p>copyright <span>Ecx 2020</span></p>
-          <p>made with &lt; /&gt;</p>
+          <p><span style="font-size: 16px;">&copy; ECX 2020</span></p>
+          <p style="font-size: 16px;">Made with &lt; /&gt;</p>
         </div>
       </div>
     </footer>
-
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

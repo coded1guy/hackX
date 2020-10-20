@@ -4,6 +4,13 @@
     font-family: Monad;
     src: url(../../fonts/Monad.otf);
 }
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 html, body {
     width: 100%;
     margin: 0;
@@ -11,11 +18,15 @@ html, body {
 * {
     box-sizing: border-box;
 }
-button, input {
+a {
+    text-decoration: none;
+    color: #0080FB;
+}
+button, input, textarea {
     outline: none;
     border: none;
 }
-button:hover, input:hover {
+button:hover, input:hover, textarea:hover {
     outline: none;
     border: none;
 }
@@ -123,12 +134,15 @@ button:hover, input:hover {
 }
 .dashboard-submission-form .subForm .inputCnt .inputCount {
     font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
     font-style: normal;
     font-weight: 1000;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
 }
-.dashboard-submission-form .subForm .inputCnt input::placeholder {
+.dashboard-submission-form .subForm .inputCnt input::placeholder,
+.dashboard-submission-form .subForm .inputCnt .submissionInputTextarea::placeholder {
     font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
     font-weight: 1000;
@@ -136,8 +150,11 @@ button:hover, input:hover {
     color: rgba(0, 0, 0, 0.4);
 }
 .dashboard-submission-form .subForm .inputCnt input[type="text"],
-.dashboard-submission-form .subForm .inputCnt  input[type="url"] {
+.dashboard-submission-form .subForm .inputCnt  input[type="url"],
+.dashboard-submission-form .subForm .inputCnt .submissionInputTextarea {
     width: 88%;
+    overflow: hidden;
+    display: inline-block;
     margin-left: 1.2%;
     background: whitesmoke;
     border-radius: 5px;
@@ -147,23 +164,88 @@ button:hover, input:hover {
     font-weight: 1000;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.4);
+    resize: none;
 }
 .dashboard-submission-form .subForm .inputCnt input[type="text"]:hover,
-.dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover {
+.dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover,
+.dashboard-submission-form .subForm .inputCnt .submissionInputTextarea:hover {
     border: 1.5px solid #1071F3;
     padding: .85%;
 } 
 .dashboard-submission-form .subForm .inputCnt .imgCnt {
-    margin: 0 4% 0 4%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-.dashboard-submission-form .subForm .inputCnt .imgCnt img {
-    margin: 2%;
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer {
+    width: 260px;
+    height: 360px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2% 1.5%;
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4vw;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imgDiCont1, 
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imgDiCont2, 
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imgDiCont3, 
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imgDiCont4 {
+    display: none;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imageUpload {
+    width: inherit;
+    height: auto;
+    background-color: white;
+    color: #336699;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    display: block;
     cursor: pointer;
+    border-radius: 5px;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imageFile {
+    display: none;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imagePreview {
+    display: none;
+    width: inherit;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.01);
+    border-radius: 5px;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imageName {
+    display: none;
+    color: #1071F3;
+    margin: 2% 0;
+    font-size: 18px;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .deleteImage {
+    display: none;
+    width: 100%;
+    border: none;
+    color: white;
+    background: #1071F3;
+    cursor: pointer;
+    margin: 3% 0;
+    padding: 3% 0;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: 0.8s;
+}
+.dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .deleteImage:hover {
+    opacity: 1;
 }
 .dashboard-submission-form .submitBtn {
     width: 100%;
@@ -172,7 +254,7 @@ button:hover, input:hover {
     padding: 2%;
 }
 .dashboard-submission-form .submitBtn .submit {
-    width: 303px;
+    width: 280px;
     height: 55px;    
     background: #1071F3;
     border-radius: 5px;  
@@ -181,6 +263,7 @@ button:hover, input:hover {
     font-style: normal;
     font-weight: 1000;
     font-size: 14px;
+    color: white;
 }
 .dashboard-submission-form .submitBtn .submit:disabled {
     background: rgba(16, 113, 243, 0.3);
@@ -189,9 +272,10 @@ button:hover, input:hover {
     font-style: normal;
     font-weight: 1000;
     font-size: 14px;
+    cursor: auto;
 }
 @media (min-width: 1px) and (max-width: 299px) {
-    .dashboard-submission-form {
+    nav, .hamburger, .dashboard-submission-form {
         display: none;
     }
     body {
@@ -219,7 +303,7 @@ button:hover, input:hover {
     .dashboard-submission-form {
         background: #E5E5E5;
         width: 100%;
-        height: 100%;
+        height: auto;
         margin: 0;
         padding-top: 5%;
     }
@@ -283,7 +367,8 @@ button:hover, input:hover {
         font-size: 3.8vw;
     }
     .dashboard-submission-form .subForm .inputCnt input[type="text"],
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"] {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"],
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea {
         width: 96%;
         display: block;
         margin: 2%;
@@ -291,7 +376,8 @@ button:hover, input:hover {
         font-size: 4vw;
     }
     .dashboard-submission-form .subForm .inputCnt input[type="text"]:hover,
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover,
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea:hover {
         border: 1.5px solid #1071F3;
         margin: 2%;
         padding: 5%;
@@ -306,6 +392,13 @@ button:hover, input:hover {
     .dashboard-submission-form .submitBtn .submit:disabled {
         font-size: 4vw;
         padding: 3%;
+    }
+    .dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer {
+        width: 210px;
+        height: 280px;
+    }
+    .dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imagePreview {
+        height: 190px;
     }
 }
 @media (min-width: 401px) and (max-width: 570px) {
@@ -330,7 +423,8 @@ button:hover, input:hover {
         font-size: 3vw;
     }
     .dashboard-submission-form .subForm .inputCnt input[type="text"],
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"] {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"],
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea {
         width: 90%;
         display: block;
         margin: 5%;
@@ -338,7 +432,8 @@ button:hover, input:hover {
         font-size: 3vw;
     }
     .dashboard-submission-form .subForm .inputCnt input[type="text"]:hover,
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover,
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea:hover {
         border: 1.5px solid #1071F3;
         margin: 5%;
         padding: 3%;
@@ -353,10 +448,18 @@ button:hover, input:hover {
     .dashboard-submission-form .submitBtn .submit:disabled {
         font-size: 3vw;
     }
+    .dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer {
+        width: 270px;
+        height: 340px;
+    }
+    .dashboard-submission-form .subForm .inputCnt .imgCnt .imageDialogContainer .imagePreview {
+        height: 230px;
+    }
 }
 @media (min-width: 570px) and (max-width: 768px) {
     .dashboard-submission-form .subForm .inputCnt input[type="text"],
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"] {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"],
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea {
         width: 76%;
         margin: 5%;
         padding: 1.5%;
@@ -364,9 +467,195 @@ button:hover, input:hover {
         font-size: 3vw;
     }
     .dashboard-submission-form .subForm .inputCnt input[type="text"]:hover,
-    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover {
+    .dashboard-submission-form .subForm .inputCnt  input[type="url"]:hover,
+    .dashboard-submission-form .subForm .inputCnt .submissionInputTextarea:hover {
         border: 1.5px solid #1071F3;
         margin: 5%;
         padding: 1.5%;
     }
+}
+
+.success,
+.error {
+  color: white;
+  width: 60%;
+  padding: 5px;
+  margin-top: 3rem;
+  margin: 2rem auto;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: #E5193B;
+}
+@media (max-width: 669px) {
+    #submit_popup{
+		width: 60%;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #ffffff;
+		display: none;
+	}
+	#close_popup{
+		width: 20px;
+		height: 20px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 3%;
+	}
+	.submit_question{
+		margin-top: 35px;
+		text-align: center;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 14px;
+	}
+	.submit_popup__btn{
+		padding: 5px;
+		background: #1071f3;
+		color: #ffffff;
+		width: 30%;
+		margin-left: 35%;
+		margin-bottom: 15px;
+	}
+	.submit_popup__btn:active{
+		color: #1071f3;
+		background: #ffffff;	
+	}
+}
+@media (min-width: 670px) and (max-width: 768px) {
+    #submit_popup{
+		width: 60%;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #ffffff;
+		display: none;
+	}
+	#close_popup{
+		width: 20px;
+		height: 20px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 3%;
+	}
+	.submit_question{
+		margin-top: 35px;
+		text-align: center;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 14px;
+	}
+	.submit_popup__btn{
+		padding: 5px;
+		background: #1071f3;
+		color: #ffffff;
+		width: 30%;
+		margin-left: 35%;
+		margin-bottom: 15px;
+	}
+	.submit_popup__btn:active{
+		color: #1071f3;
+		background: #ffffff;	
+	}
+}
+@media (min-width: 769px) and (max-width: 968px) {
+    #submit_popup{
+		width: 350px;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #ffffff;
+		display: none;
+	}
+	#close_popup{
+		width: 35px;
+		height: 35px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 3%;
+	}
+	.submit_question{
+		margin-top: 60px;
+		text-align: center;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18px;
+	}
+	.submit_popup__btn{
+		padding: 5px;
+		background: #1071f3;
+		color: #ffffff;
+		width: 30%;
+		margin-left: 35%;
+		margin-bottom: 15px;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18px;
+	}
+	.submit_popup__btn:active{
+		color: #1071f3;
+		background: #ffffff;	
+	}
+}
+@media (min-width: 969px) {
+    #submit_popup{
+		width: 350px;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #ffffff;
+		display: none;
+	}
+	#close_popup{
+		width: 35px;
+		height: 35px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 3%;
+	}
+	.submit_question{
+		margin-top: 60px;
+		text-align: center;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18px;
+	}
+	.submit_popup__btn{
+		padding: 5px;
+		background: #1071f3;
+		color: #ffffff;
+		width: 30%;
+		margin-left: 35%;
+		margin-bottom: 15px;
+		font-family: 'montserrat', sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18px;
+	}
+	.submit_popup__btn:active{
+		color: #1071f3;
+		background: #ffffff;	
+	}
 }
